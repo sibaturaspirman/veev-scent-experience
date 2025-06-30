@@ -58,31 +58,34 @@ window.addEventListener('resize', () => {
 
 //APP
 function pageStart(){
-    $("#sectionHome").addClass('hide')
+    $(".section").addClass('hide')
     $("#sectionPage1").removeClass('hide')
 }
 function pageNext1(){
-    $("#sectionPage1").addClass('hide')
+    $(".section").addClass('hide')
     $("#sectionPage2").removeClass('hide')
 }
 function pageNext2(){
-    $("#sectionPage2").addClass('hide')
+    $(".section").addClass('hide')
     $("#sectionPage3").removeClass('hide')
 }
 function pageNext4(){
-    $("#sectionPage4").addClass('hide')
+  $(".section").addClass('hide')
     $("#sectionPage5").removeClass('hide')
 }
 
 function pageNext6(){
+    $('#scentGrid1').removeClass('disable');
+    $('#scentGrid2').removeClass('disable');
     $('.scent-option').removeClass('selected');
     $('.scent-option2').removeClass('selected');
 
-    $("#sectionPage6").addClass('hide')
+    $(".section").addClass('hide')
     $("#sectionHome").removeClass('hide')
 }
 
 $('.scent-option').on('click', function () {
+    $('#scentGrid1').addClass('disable');
     $('.scent-option').removeClass('selected');
     $(this).addClass('selected');
 
@@ -90,13 +93,14 @@ $('.scent-option').on('click', function () {
     localStorage.setItem('scent', value);
     console.log('Selected scent:', value);
     setTimeout(() => {
-        $("#sectionPage3").addClass('hide')
+        $(".section").addClass('hide')
         $("#sectionPage4").removeClass('hide')
     }, 700);
 });
 
 let OPSI = ''
 $('.scent-option2').on('click', function () {
+    $('#scentGrid2').addClass('disable');
     $('.scent-option2').removeClass('selected');
     $(this).addClass('selected');
 
@@ -112,7 +116,7 @@ $('.scent-option2').on('click', function () {
     `);
 
     setTimeout(() => {
-        $("#sectionPage5").addClass('hide')
+        $(".section").addClass('hide')
         $("#sectionPage6").removeClass('hide')
     }, 700);
 });

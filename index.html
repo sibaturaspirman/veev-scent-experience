@@ -1,8 +1,8 @@
-<!-- //(v.0.3) ...................................................antigravity.id..........................................................-->
+<!-- //(v.0.4) ...................................................antigravity.id..........................................................-->
 <!DOCTYPE html>
 <html>
 <head>
-	<title>VEEV (v.0.3)</title>
+	<title>VEEV (v.0.4)</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	<link rel="shortcut icon" href="assets/images/icon-192.png"/>
@@ -12,6 +12,11 @@
     <meta name="theme-color" content="#3B275E">
 	<meta name="description" content="An interactive game. Come on, play this game" />
     <link rel="stylesheet" href="css/main.css">
+    <style>
+        .scent-grid.disable{
+            pointer-events: none;
+        }
+    </style>
 
     <script type="text/javascript" src="js/polyfill.min.js"></script>
     <script type="text/javascript" src="js/jquery-3.1.0.js"></script>
@@ -48,7 +53,7 @@
         </div>
         <div class="section page hide" id="sectionPage3">
             <div class="block-image" style="width: 40%;margin-bottom: 3rem;"><img src="./assets/images/VEEV-CHOOSE1.png" alt="VEEV"></div>
-            <div class="scent-grid">
+            <div class="scent-grid" id="scentGrid1">
                 <div class="scent-option" data-value="grape">
                     <div class="block-image"><img src="./assets/images/VEEV-Q1-C1.png" alt="VEEV"></div>
                 </div>
@@ -75,7 +80,7 @@
         </div>
         <div class="section page hide" id="sectionPage5">
             <div class="block-image" style="width: 40%;margin-bottom: 3rem;"><img src="./assets/images/VEEV-CHOOSE2.png" alt="VEEV"></div>
-            <div class="scent-grid">
+            <div class="scent-grid" id="scentGrid2">
                 <div class="scent-option2" data-value="R5">
                     <div class="block-image"><img src="./assets/images/VEEV-Q2-C1.png" alt="VEEV"></div>
                 </div>
