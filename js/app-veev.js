@@ -6,7 +6,7 @@ const img = new Image();
 img.src = './assets/images/VEEV-BG.jpg'; // Ganti dengan path gambar
 
 let waveOffset = 0;
-const waveAmplitude = 7;
+const waveAmplitude = .6;
 const waveFrequency = 0.05;
 let scaledImageData = null;
 
