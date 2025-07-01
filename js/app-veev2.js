@@ -119,11 +119,11 @@ $('.scent-option2').on('click', function () {
     console.log('Selected scent:', value);
     OPSI = value
 
-    const randomNum = Math.floor(Math.random() * 6) + 1;
-    const imgPath = `./assets/images/VEEV-${OPSI}.png`; // Pastikan path sesuai
-    $('#hasilGambar').html(`
-    <img src="${imgPath}" alt="Random Image">
-    `);
+    // const randomNum = Math.floor(Math.random() * 6) + 1;
+    // const imgPath = `./assets/images/VEEV-${OPSI}.png`; // Pastikan path sesuai
+    // $('#hasilGambar').html(`
+    // <img src="${imgPath}" alt="Random Image">
+    // `);
 
     setTimeout(() => {
         // $(".section").addClass('hide')
@@ -131,3 +131,4 @@ $('.scent-option2').on('click', function () {
         location.href='page6.html'
     }, 700);
 });
+

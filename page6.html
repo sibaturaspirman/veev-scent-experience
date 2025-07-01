@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>VEEV (v.0.5)</title>
+	<title>VEEV (v.0.6)</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	<link rel="shortcut icon" href="assets/images/icon-192.png"/>
@@ -44,6 +44,17 @@
 
 
     <script type="text/javascript" src="js/app-veev2.js"></script>
+    <script>
+        // Ambil data dari localStorage
+        const scent2 = localStorage.getItem('scent2');
+      
+        // Tampilkan ke halaman
+        document.addEventListener('DOMContentLoaded', function () {
+          document.getElementById('hasilGambar').innerHTML = `
+          <img src="./assets/images/VEEV-${scent2}.png" alt="Random Image">
+          `;
+        });
+    </script>
     <script>
         if ('serviceWorker' in navigator) {
           navigator.serviceWorker.register('sw.js')
