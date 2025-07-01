@@ -1,0 +1,120 @@
+<!-- //(v.0.4) ...................................................antigravity.id..........................................................-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>VEEV (v.0.4)</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<link rel="shortcut icon" href="assets/images/icon-192.png"/>
+    <link rel="apple-touch-icon" href="assets/images/icon-192.png">
+
+
+    <meta name="theme-color" content="#3B275E">
+	<meta name="description" content="An interactive game. Come on, play this game" />
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        .scent-grid.disable{
+            pointer-events: none;
+        }
+    </style>
+
+    <script type="text/javascript" src="js/polyfill.min.js"></script>
+    <script type="text/javascript" src="js/jquery-3.1.0.js"></script>
+    <script type="text/javascript" src="js/howler.min.js"></script>
+    <link rel="manifest" href="manifest.json" />
+
+</head>
+<body style="background-color: #3B275E;">
+    
+    <!-- BG -->
+    <canvas id="canvas"  style="width: 100%; height: auto; display: block;"></canvas>
+
+    <!-- MODAL -->
+    <div class="overlayGame hide" id="overlayGame">&nbsp;</div>
+    <!-- !MODAL -->
+    
+    <!-- GAMEPLAY -->
+    <div class="gameplay">
+        <div class="section home hidex" id="sectionHome" onclick="pageStart()">
+            <div class="block-image" style="width: 50%;margin-bottom: 5rem;"><img src="./assets/images/VEEV-REVEAL.png" alt="VEEV"></div>
+            <div class="logo">
+                <div class="block-image"><img src="./assets/images/VEEV-1.png" alt="VEEV"></div>
+                <div class="block-image"><img src="./assets/images/VEEV-2.png" alt="VEEV"></div>
+            </div>
+        </div>
+        <div class="section page hide" id="sectionPage1" onclick="pageNext1()">
+            <div class="block-image" style="width: 90%;margin-bottom: 5rem;"><img src="./assets/images/VEEV-Q1.png" alt="VEEV"></div>
+            <div class="block-image animScale" style="width: 30%;"><img src="./assets/images/VEEV-NEXT.png" alt="VEEV"></div>
+        </div>
+        <div class="section page hide" id="sectionPage2" onclick="pageNext2()">
+            <div class="block-image" style="width: 90%;margin-bottom: 5rem;"><img src="./assets/images/VEEV-Q2.png" alt="VEEV"></div>
+            <div class="block-image animScale" style="width: 30%;"><img src="./assets/images/VEEV-NEXT.png" alt="VEEV"></div>
+        </div>
+        <div class="section page hide" id="sectionPage3">
+            <div class="block-image" style="width: 40%;margin-bottom: 3rem;"><img src="./assets/images/VEEV-CHOOSE1.png" alt="VEEV"></div>
+            <div class="scent-grid" id="scentGrid1">
+                <div class="scent-option" data-value="grape">
+                    <div class="block-image"><img src="./assets/images/VEEV-Q1-C1.png" alt="VEEV"></div>
+                </div>
+                <div class="scent-option" data-value="apple">
+                    <div class="block-image"><img src="./assets/images/VEEV-Q1-C2.png" alt="VEEV"></div>
+                </div>
+                <div class="scent-option" data-value="melon">
+                    <div class="block-image"><img src="./assets/images/VEEV-Q1-C3.png" alt="VEEV"></div>
+                </div>
+                <div class="scent-option" data-value="raspberry">
+                    <div class="block-image"><img src="./assets/images/VEEV-Q1-C4.png" alt="VEEV"></div>
+                </div>
+                <div class="scent-option" data-value="mango">
+                    <div class="block-image"><img src="./assets/images/VEEV-Q1-C5.png" alt="VEEV"></div>
+                </div>
+                <div class="scent-option" data-value="strawberry">
+                    <div class="block-image"><img src="./assets/images/VEEV-Q1-C6.png" alt="VEEV"></div>
+                </div>
+            </div>
+        </div>
+        <div class="section page hide" id="sectionPage4" onclick="pageNext4()">
+            <div class="block-image" style="width: 90%;margin-bottom: 5rem;"><img src="./assets/images/VEEV-Q3.png" alt="VEEV"></div>
+            <div class="block-image animScale" style="width: 30%;"><img src="./assets/images/VEEV-NEXT.png" alt="VEEV"></div>
+        </div>
+        <div class="section page hide" id="sectionPage5">
+            <div class="block-image" style="width: 40%;margin-bottom: 3rem;"><img src="./assets/images/VEEV-CHOOSE2.png" alt="VEEV"></div>
+            <div class="scent-grid" id="scentGrid2">
+                <div class="scent-option2" data-value="R5">
+                    <div class="block-image"><img src="./assets/images/VEEV-Q2-C1.png" alt="VEEV"></div>
+                </div>
+                <div class="scent-option2" data-value="R2">
+                    <div class="block-image"><img src="./assets/images/VEEV-Q2-C2.png" alt="VEEV"></div>
+                </div>
+                <div class="scent-option2" data-value="R3">
+                    <div class="block-image"><img src="./assets/images/VEEV-Q2-C3.png" alt="VEEV"></div>
+                </div>
+                <div class="scent-option2" data-value="R1">
+                    <div class="block-image"><img src="./assets/images/VEEV-Q2-C4.png" alt="VEEV"></div>
+                </div>
+                <div class="scent-option2" data-value="R6">
+                    <div class="block-image"><img src="./assets/images/VEEV-Q2-C5.png" alt="VEEV"></div>
+                </div>
+                <div class="scent-option2" data-value="R4">
+                    <div class="block-image"><img src="./assets/images/VEEV-Q2-C6.png" alt="VEEV"></div>
+                </div>
+            </div>
+        </div>
+        <div class="section page hide" id="sectionPage6" onclick="pageNext6()">
+            <div class="block-image" style="width: 90%" id="hasilGambar"><img src="./assets/images/VEEV-R1.png" alt="VEEV"></div>
+        </div>
+    </div>
+    <!-- !GAMEPLAY -->
+
+
+
+    <script type="text/javascript" src="js/app-veev.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('sw.js')
+            .then(() => console.log('✅ Service Worker Registered v0.2'))
+            .catch(err => console.error('❌ SW registration failed:', err));
+        }
+    </script>
+</body>
+</html>
