@@ -1,9 +1,10 @@
 module.exports = {
 	globDirectory: ".",
 	globPatterns: [
-	  "**/*.{html,js,css,png,jpg,jpeg,svg,mp3,woff2,woff}"
+	  "**/*.{html,js,css,png,jpg,jpeg,svg,mp3,mp4,woff2,woff}"
 	],
 	swDest: "sw.js",
+	maximumFileSizeToCacheInBytes: 15 * 1024 * 1024, // 15MB
 	clientsClaim: true,
 	skipWaiting: true,
 	runtimeCaching: [
@@ -25,13 +26,13 @@ module.exports = {
   
 	  // Cache assets (images, audio, fonts, etc.)
 	  {
-		urlPattern: /\.(?:html|png|jpg|jpeg|svg|mp3|woff2|woff|css|js)$/,
+		urlPattern: /\.(?:html|png|jpg|jpeg|svg|mp3|mp4|woff2|woff|css|js)$/,
 		handler: "CacheFirst",
 		options: {
 		  cacheName: "static-assets",
 		  expiration: {
 			maxEntries: 100,
-			maxAgeSeconds: 60 * 60 * 24 * 30 // 30 days
+			maxAgeSeconds: 60 * 60 * 24 * 3 // 3 days
 		  },
 		  cacheableResponse: {
 			statuses: [0, 200]
