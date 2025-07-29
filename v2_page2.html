@@ -1,0 +1,61 @@
+<!-- //(v.2.0) ...................................................antigravity.id..........................................................-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>VEEV (v.2.0)</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<link rel="shortcut icon" href="assets/images/icon-192.png"/>
+    <link rel="apple-touch-icon" href="assets/images/icon-192.png">
+
+
+    <meta name="theme-color" content="#3B275E">
+	<meta name="description" content="An interactive game. Come on, play this game" />
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        .scent-grid.disable{
+            pointer-events: none;
+        }
+    </style>
+
+    <script type="text/javascript" src="js/polyfill.min.js"></script>
+    <script type="text/javascript" src="js/jquery-3.1.0.js"></script>
+    <script type="text/javascript" src="js/howler.min.js"></script>
+    <link rel="manifest" href="manifest.json" />
+
+</head>
+<body style="background-color: #3B275E;">
+    
+    <!-- BG -->
+    <canvas id="canvas"  style="width: 100%; height: auto; display: block;"></canvas>
+
+    <!-- MODAL -->
+    <div class="overlayGame hide" id="overlayGame">&nbsp;</div>
+    <!-- !MODAL -->
+    
+    <!-- GAMEPLAY -->
+    <div class="gameplay">
+        <div class="section page hidex" id="sectionPage2" onclick="pageNext2()">
+            <div class="frame">
+                <div class="block-image" style="width: 100%;"><img src="./assets/images/v2_frame.png" alt="VEEV"></div>
+                <div class="frame__inner">
+                    <div class="block-image" style="width: 90%;margin-bottom: 5rem;"><img src="./assets/images/v2_q2.png" alt="VEEV"></div>
+                    <div class="block-image animScale" style="width: 30%;"><img src="./assets/images/v2_next.png" alt="VEEV"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- !GAMEPLAY -->
+
+
+
+    <script type="text/javascript" src="js/app-veev-v2.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('sw.js')
+            .then(() => console.log('✅ Service Worker Registered v0.2'))
+            .catch(err => console.error('❌ SW registration failed:', err));
+        }
+    </script>
+</body>
+</html>
