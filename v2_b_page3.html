@@ -31,15 +31,32 @@
 
     <!-- MODAL -->
     <div class="overlayGame hide" id="overlayGame">&nbsp;</div>
+    <div class="overlayGame hide" id="video1Popup">
+        <video src="./assets/videos/redmelon.mp4" id="video1" playsinline style="width: 100%;"></video>
+    </div>
+    <div class="overlayGame hide" id="video2Popup">
+        <video src="./assets/videos/strawberry.mp4" id="video2" playsinline style="width: 100%;"></video>
+    </div>
+    <div class="overlayGame hide" id="overlayGame">&nbsp;</div>
     <!-- !MODAL -->
     
     <!-- GAMEPLAY -->
     <div class="gameplay">
-        <div class="section home hidex" id="sectionHome">
-            <h3 style="font-size: 40px;margin-bottom: 20px;">PILIH VENUE</h3>
-            <div style="display: flex;align-items: center;justify-content: center;">
-                <a href="cirebon.html" style="display: block;border: 2px solid #fff;font-size: 50px;padding: 20px 30px;color: #fff;text-decoration: none;border-radius: 8px;">CIREBON</a>
-                <a href="banjarmasin.html" style="display: block;border: 2px solid #fff;font-size: 50px;padding: 20px 30px;color: #fff;text-decoration: none;border-radius: 8px;margin-left: 20px;">BANJARMASIN</a>
+        <div class="section page hidex" id="sectionPage3">
+
+            <div class="frame">
+                <div class="block-image" style="width: 100%;"><img src="./assets/images/v2_frame.png" alt="VEEV"></div>
+                <div class="frame__inner">
+                    <div class="block-image" style="width: 40%;margin-bottom: 3rem;"><img src="./assets/images/v2_choose.png" alt="VEEV"></div>
+                    <div class="scent-grid" id="scentGrid1">
+                        <div class="scent-option" data-value="redmelon">
+                            <div class="block-image"><img src="./assets/images/v2_c1.png" alt="VEEV"></div>
+                        </div>
+                        <div class="scent-option" data-value="strawberry">
+                            <div class="block-image"><img src="./assets/images/v2_c2.png" alt="VEEV"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -47,7 +64,7 @@
 
 
 
-    <script type="text/javascript" src="js/app-veev-v2.js"></script>
+    <script type="text/javascript" src="js/app-veev-v2-banjarmasin.js"></script>
     <script>
         if ('serviceWorker' in navigator) {
           navigator.serviceWorker.register('sw.js')

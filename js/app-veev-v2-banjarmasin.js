@@ -61,19 +61,19 @@ function pageStart(){
     // $(".section").addClass('hide')
     // $("#sectionPage1").removeClass('hide')
 
-    location.href='v2_page1.html'
+    location.href='v2_b_page1.html'
 }
 function pageNext1(){
     // $(".section").addClass('hide')
     // $("#sectionPage2").removeClass('hide')
 
-    location.href='v2_page2.html'
+    location.href='v2_b_page2.html'
 }
 function pageNext2(){
     // $(".section").addClass('hide')
     // $("#sectionPage3").removeClass('hide')
 
-    location.href='v2_page3.html'
+    location.href='v2_b_page3.html'
 }
 function pageNext4(){
   // $(".section").addClass('hide')
@@ -90,7 +90,7 @@ function pageNext6(){
     // $(".section").addClass('hide')
     // $("#sectionHome").removeClass('hide')
 
-      location.href='cirebon.html'
+      location.href='banjarmasin.html'
 }
 
 function getRandomInt(min, max) {
@@ -104,19 +104,21 @@ $('.scent-option').on('click', function () {
     $(this).addClass('selected');
 
     const value = $(this).data('value');
-    let randomNum = getRandomInt(1,5)
-    localStorage.setItem('scent', randomNum);
+    // let randomNum = getRandomInt(4,5)
+    // localStorage.setItem('scent', randomNum);
     if(value == 'redmelon'){
       $("#video1Popup").removeClass("hide")
       document.getElementById('video1').play()
+      localStorage.setItem('scent', '4');
     }else{
       $("#video2Popup").removeClass("hide")
       document.getElementById('video2').play()
+      localStorage.setItem('scent', '5');
     }
     setTimeout(() => {
         // $(".section").addClass('hide')
         // $("#sectionPage4").removeClass('hide')
-      location.href='v2_page4.html'
+      location.href='v2_b_page4.html'
     }, 10000);
 });
 
